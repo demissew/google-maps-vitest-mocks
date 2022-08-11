@@ -17,41 +17,22 @@ on:
   push:
     branches:
       - main
-concurrency: release
+  workflow_dispatch:
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs: [test]
     steps:
-      - uses: actions/setup-node@v2
+      - name: Checkout main
+        uses: actions/checkout@master
+      - name: Install node
+        uses: actions/setup-node@v1
         with:
-          node-version: '14'
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.SYNCED_GITHUB_TOKEN_REPO }}
-      - uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - name: Test
-        run: |
-          npm i
-          npm run lint
-          npm test
-      - name: Release
-        uses: cycjimmy/semantic-release-action@v2
-        with:
-          extra_plugins: |
-            @semantic-release/commit-analyzer
-            semantic-release-interval
-            @semantic-release/release-notes-generator
-            @semantic-release/git
-            @semantic-release/github
-            @semantic-release/npm
-            @googlemaps/semantic-release-config
-            semantic-release-npm-deprecate
+          node-version: '14.x'
+      - run: npm i
+      - run: npm run build
+      - run: npm run semantic-release
         env:
-          GH_TOKEN: ${{ secrets.SYNCED_GITHUB_TOKEN_REPO }}
-          NPM_TOKEN: ${{ secrets.NPM_WOMBAT_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

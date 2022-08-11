@@ -27,7 +27,8 @@
     "lint": "eslint .",
     "prepare": "rm -rf dist && rollup -c",
     "test": "vitest --config ./vitest.config.ts",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "semantic-release": "semantic-release --branches main"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.3.4",
@@ -39,11 +40,15 @@
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.7.1",
     "rollup": "^2.77.2",
+    "semantic-release": "^19.0.3",
     "typedoc": "^0.23.10",
     "typescript": "^4.7.4",
     "vitest": "^0.21.1"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "release": {
+    "branches": ["main", "next"]
   }
 }
