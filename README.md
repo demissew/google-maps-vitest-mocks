@@ -1,30 +1,28 @@
-# Jest Mocks for Google Maps
+# Vitest Mocks for Google Maps
 
-[![npm](https://img.shields.io/npm/v/@googlemaps/jest-mocks)](https://www.npmjs.com/package/@googlemaps/jest-mocks)
-![Build](https://github.com/googlemaps/js-jest-mocks/workflows/Test/badge.svg)
-![Release](https://github.com/googlemaps/js-jest-mocks/workflows/Release/badge.svg)
-[![codecov](https://codecov.io/gh/googlemaps/js-jest-mocks/branch/main/graph/badge.svg)](https://codecov.io/gh/googlemaps/js-jest-mocks)
-![GitHub contributors](https://img.shields.io/github/contributors/googlemaps/js-jest-mocks?color=green)
+[![npm](https://img.shields.io/npm/v/@demissew/google-maps-vitest-mocks)](https://www.npmjs.com/package/@demissew/google-maps-vitest-mocks)
+![Build](https://github.com/demissew/google-maps-vitest-mocks/workflows/Test/badge.svg)
+![Release](https://github.com/demissew/google-maps-vitest-mocks/workflows/Release/badge.svg)
+![GitHub contributors](https://img.shields.io/github/contributors/demissew/google-maps-vitest-mocks?color=green)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-[![](https://github.com/jpoehnelt/in-solidarity-bot/raw/main/static//badge-flat.png)](https://github.com/apps/in-solidarity)
-[![Discord](https://img.shields.io/discord/676948200904589322?color=6A7EC2&logo=discord&logoColor=ffffff)](https://discord.gg/jRteCzP)
+
 
 ## Description
 
-Jest mocks for Google Maps in TypeScript.
+Vitest mocks for Google Maps in TypeScript.
 
 **Note:** If you find a missing mock, please open an [issue][issues].
 
 ## NPM
 
-Available via NPM as the package `@googlemaps/jest-mocks`
+Available via NPM as the package `@demissew/google-maps-vitest-mocks`
 
 ## Inspecting mocks
 
 You can inspect what happens with the created mock instances (e.g. `Map` or `Marker`) via the `mockInstances` object.
 
 ```ts
-import { initialize, Map, Marker, mockInstances } from "@googlemaps/jest-mocks";
+import { initialize, Map, Marker, mockInstances } from "@demissew/google-maps-vitest-mocks";
 
 beforeEach(() => {
   initialize();
@@ -52,10 +50,10 @@ test("my test", () => {
 
 ## Cleaning up mocks
 
-Whenever `initialize()` is called, the captured mocks are automatically cleaned. Using any of Jest's methods, you can clean the mock instances at any time:
+Whenever `initialize()` is called, the captured mocks are automatically cleaned. Using any of Vitest's methods, you can clean the mock instances at any time:
 
 ```ts
-import { initialize, Map, Marker, mockInstances } from "@googlemaps/jest-mocks";
+import { initialize, Map, Marker, mockInstances } from "@demissew/google-maps-vitest-mocks";
 
 beforeAll(() => {
   initialize();
@@ -80,5 +78,5 @@ the library that we want you to build real production applications on it.
 If you find a bug, or have a feature suggestion, please [log an issue][issues]. If you'd like to
 contribute, please read [How to Contribute][contrib].
 
-[issues]: https://github.com/googlemaps/js-jest-mocks/issues
+[issues]: https://github.com/demissew/google-maps-vitest-mocks/issues
 [contrib]: CONTRIBUTING.md
