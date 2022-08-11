@@ -30,11 +30,9 @@ export class LatLng implements google.maps.LatLng {
   public toUrlValue = vi
     .fn()
     .mockImplementation((precision?: number): string => "");
-  public toJSON = vi
-    .fn()
-    .mockImplementation((): google.maps.LatLngLiteral => {
-      return { lat: 0, lng: 0 };
-    });
+  public toJSON = vi.fn().mockImplementation((): google.maps.LatLngLiteral => {
+    return { lat: 0, lng: 0 };
+  });
 }
 
 export class LatLngBounds implements google.maps.LatLngBounds {

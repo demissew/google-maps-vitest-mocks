@@ -7,7 +7,6 @@
       "jsx": true
     }
   },
-  "plugins": ["jest"],
   "rules": {
     "no-var": 2,
     "prefer-arrow-callback": 2
@@ -42,8 +41,7 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true,
-    "jest/globals": true
+    "es6": true
   },
   "globals": { "google": "readonly" }
 }

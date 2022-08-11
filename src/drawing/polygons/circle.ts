@@ -44,9 +44,7 @@ export class Circle extends MVCObject implements google.maps.Circle {
     .mockImplementation(
       (center: google.maps.LatLng | google.maps.LatLngLiteral) => {}
     );
-  public setDraggable = vi
-    .fn()
-    .mockImplementation((draggable: boolean) => {});
+  public setDraggable = vi.fn().mockImplementation((draggable: boolean) => {});
   public setEditable = vi.fn().mockImplementation((editable: boolean) => {});
   public setMap = vi.fn().mockImplementation((map: google.maps.Map) => {});
   public setOptions = vi

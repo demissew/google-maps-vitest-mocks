@@ -70,9 +70,7 @@ export class Marker extends MVCObject implements google.maps.Marker {
   public setAnimation = vi
     .fn()
     .mockImplementation((animation: Animation | null): void => {});
-  public setClickable = vi
-    .fn()
-    .mockImplementation((flag: boolean): void => {});
+  public setClickable = vi.fn().mockImplementation((flag: boolean): void => {});
   public setCursor = vi
     .fn()
     .mockImplementation((cursor: string | null): void => {});

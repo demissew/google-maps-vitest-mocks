@@ -26,11 +26,9 @@ export class Feature implements google.maps.Data.Feature {
     .mockImplementation((): google.maps.Data.Geometry | null => {
       return null;
     });
-  public getId = vi
-    .fn()
-    .mockImplementation((): number | string | undefined => {
-      return "1";
-    });
+  public getId = vi.fn().mockImplementation((): number | string | undefined => {
+    return "1";
+  });
   public getProperty = vi.fn().mockImplementation((name: string): any => {
     return undefined;
   });

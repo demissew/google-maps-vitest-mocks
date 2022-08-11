@@ -50,9 +50,7 @@ export class Autocomplete
     .mockImplementation(
       (restrictions: google.maps.places.ComponentRestrictions): void => {}
     );
-  public setFields = vi
-    .fn()
-    .mockImplementation((fields: string[]): void => {});
+  public setFields = vi.fn().mockImplementation((fields: string[]): void => {});
   public setOptions = vi
     .fn()
     .mockImplementation(

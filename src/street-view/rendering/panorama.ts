@@ -89,8 +89,6 @@ export class StreetViewPanorama
   public setPov = vi
     .fn()
     .mockImplementation((pov: google.maps.StreetViewPov): void => null);
-  public setVisible = vi
-    .fn()
-    .mockImplementation((flag: boolean): void => null);
+  public setVisible = vi.fn().mockImplementation((flag: boolean): void => null);
   public setZoom = vi.fn().mockImplementation((zoom: number): void => null);
 }
